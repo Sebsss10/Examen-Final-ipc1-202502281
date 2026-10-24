@@ -5,7 +5,6 @@ public class Playlist {
     private NodoDoble cola;
     private NodoDoble actual;
     private int tamanio;
-    
 
     public Playlist() {
         cabeza = null;
@@ -13,7 +12,6 @@ public class Playlist {
         actual = null;
         tamanio = 0;
     }
-    
 
     public void agregarCancion(Cancion tema) {
         NodoDoble eslabon = new NodoDoble(tema);
@@ -43,6 +41,52 @@ public class Playlist {
             posicion++;
         }
     }
+
+    public Cancion siguiente() {
+        if (actual == null || actual == cola) {
+            return null;
+        }
+        actual = actual.getSiguiente();
+        actual.getDato().reproducir();
+        return actual.getDato();
+    }
+
+    public Cancion anterior() {
+        if (actual == null || actual == cabeza) {
+            return null;
+        }
+        actual = actual.getAnterior();
+        actual.getDato().reproducir();
+        return actual.getDato();
+    }
+
+    public void eliminarActual() {
+        if (actual == null) {
+            return;
+        }
+        NodoDoble previo = actual.getAnterior();
+        NodoDoble proximo = actual.getSiguiente();
+
+        if (cabeza == cola) {             
+            cabeza = null;
+            cola = null;
+            actual = null;
+        } else if (actual == cabeza) {     
+            cabeza = proximo;
+            proximo.setAnterior(null);
+            actual = proximo;
+        } else if (actual == cola) {       
+            cola = previo;
+            previo.setSiguiente(null);
+            actual = previo;
+        } else {                           
+            previo.setSiguiente(proximo);
+            proximo.setAnterior(previo);
+            actual = proximo;
+        }
+        tamanio--;
+    }
+
 
     public NodoDoble getCabeza() { return cabeza; }
     public NodoDoble getCola() { return cola; }
