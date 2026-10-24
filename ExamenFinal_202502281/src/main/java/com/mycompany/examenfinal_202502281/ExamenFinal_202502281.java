@@ -2,18 +2,18 @@ package com.mycompany.examenfinal_202502281;
 
 public class ExamenFinal_202502281 {
     public static void main(String[] args) {
-        Cancion bohemian = new Cancion("Bohemian Rhapsody", 354, "Queen");
-        Cancion hotel = new Cancion("Hotel California", 391, "Eagles");
-        Cancion imagine = new Cancion("Imagine", 183, "John Lennon");
+        Cancion sideways = new Cancion("sideways", 187, "Zayn");
+        Cancion Jimmy = new Cancion("Jimmy Cooks", 262, "Drake feat. 21 Savage");
+        Cancion wait = new Cancion("Wait for U", 270, "Future");
 
-        bohemian.reproducir();
-        hotel.reproducir();
-        imagine.reproducir();
+        sideways.reproducir();
+        Jimmy.reproducir();
+        wait.reproducir();
 
         Playlist miLista = new Playlist();
-        miLista.agregarCancion(bohemian);
-        miLista.agregarCancion(hotel);
-        miLista.agregarCancion(imagine);
+        miLista.agregarCancion(sideways);
+        miLista.agregarCancion(Jimmy);
+        miLista.agregarCancion(wait);
         miLista.mostrarPlaylist();
     }
 }
