@@ -1,4 +1,3 @@
-
 package com.mycompany.examenfinal_202502281;
 
 public class ExamenFinal_202502281 {
@@ -10,5 +9,11 @@ public class ExamenFinal_202502281 {
         bohemian.reproducir();
         hotel.reproducir();
         imagine.reproducir();
+
+        Playlist miLista = new Playlist();
+        miLista.agregarCancion(bohemian);
+        miLista.agregarCancion(hotel);
+        miLista.agregarCancion(imagine);
+        miLista.mostrarPlaylist();
     }
 }

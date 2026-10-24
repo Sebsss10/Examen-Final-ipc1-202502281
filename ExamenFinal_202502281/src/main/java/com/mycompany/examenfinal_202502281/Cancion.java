@@ -1,10 +1,10 @@
 package com.mycompany.examenfinal_202502281;
-// Canción: hereda de Multimedia y añade el artista
+
 public class Cancion extends Multimedia {
     private String artista;
     
     
-// Constructor: usa super para título y duración
+
     public Cancion(String tituloInicial, int segundos, String interprete) {
         super(tituloInicial, segundos);
         this.artista = interprete;

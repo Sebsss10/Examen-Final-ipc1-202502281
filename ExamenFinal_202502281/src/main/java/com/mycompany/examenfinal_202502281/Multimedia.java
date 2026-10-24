@@ -1,10 +1,10 @@
 package com.mycompany.examenfinal_202502281;
-// Clase abstracta base para cualquier contenido multimedia
+
 public abstract class Multimedia {
     private String titulo;
     private int duracion;
     
-// Constructor: inicializa título y duración
+
     public Multimedia(String tituloInicial, int segundos) {
         this.titulo = tituloInicial;
         this.duracion = segundos;
